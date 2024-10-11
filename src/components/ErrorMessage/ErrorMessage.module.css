@@ -1,0 +1,13 @@
+.error-block {
+    background-color: pink;
+    color: darkred;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.error-button {
+  margin-left: 10px;
+  background-color: darkgray;
+  color: white;
+}
