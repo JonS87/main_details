@@ -26,7 +26,6 @@ export const fetchServicesEpic: Epic<Action> = (action$) =>
         return response.json();
       })).pipe(
         mergeMap((data: Service[]) => {
-          console.log('fetchServicesEpic data', data);
           return of(fetchServicesSuccess(data));
         }),
         catchError(error => {
@@ -48,7 +47,7 @@ export const fetchServiceDetailsEpic: Epic<Action> = (action$) =>
           return response.json();
         })).pipe(
           mergeMap((data: Service) => {
-            console.log('fetchServiceDetailsEpic data', data);
+            // console.log('fetchServiceDetailsEpic data', data);
             return of(fetchServiceDetailsSuccess(data));
           }),
           catchError(error => {

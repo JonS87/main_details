@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchServicesStart } from '../../redux/reducers';
 import Loader from '../Loader/Loader';
@@ -12,17 +12,13 @@ const ServicesList: React.FC = () => {
     const loading = useSelector((state: RootState) => state.loading);
     const error = useSelector((state: RootState) => state.error);
 
-    const [hasFetched, setHasFetched] = useState(false);
-    
     useEffect(() => {
-      if (!hasFetched) {
-        setHasFetched(true);
+      if (!loading && services.length === 0 && !error) {
         dispatch(fetchServicesStart());
       }
-    }, [dispatch, hasFetched]);
+    }, [dispatch, loading, services.length, error]);
 
     const handleRetry = () => {
-      setHasFetched(false);
       dispatch(fetchServicesStart());
     };
 

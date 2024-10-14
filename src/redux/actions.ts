@@ -7,7 +7,7 @@ export const FETCH_SERVICE_DETAILS = 'FETCH_SERVICE_DETAILS';
 export const FETCH_SERVICE_DETAILS_SUCCESS = 'FETCH_SERVICE_DETAILS_SUCCESS';
 export const FETCH_SERVICE_DETAILS_ERROR = 'FETCH_SERVICE_DETAILS_ERROR';
 
-export const fetchServices = () => ({ type: FETCH_SERVICES });
+export const fetchServicesStart = () => ({ type: FETCH_SERVICES });
 export const fetchServicesSuccess = (services: Service[]) => ({ type: FETCH_SERVICES_SUCCESS, payload: services });
 export const fetchServicesError = () => ({ type: FETCH_SERVICES_ERROR });
 export const fetchServiceDetailsStart = (id: number) => ({ type: FETCH_SERVICE_DETAILS, payload: id });

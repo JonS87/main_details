@@ -15,10 +15,10 @@ const ServiceDetails: React.FC = () => {
     const error = useSelector((state: RootState) => state.error);
 
     useEffect(() => {
-        if (id) {
+        if (id && !loading && !selectedService) {
             dispatch(fetchServiceDetailsStart(Number(id)));
         }
-    }, [dispatch, id]);
+    }, [dispatch, id, loading, selectedService]);
 
     const handleRetry = () => {
         if (id) {

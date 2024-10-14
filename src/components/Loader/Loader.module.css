@@ -1,6 +1,6 @@
 .loader {
-  border: 8px solid rgba(255, 0, 0, 0.3);
-  border-left-color: red;
+  border: 8px solid red;
+  border-left-color: white; /*red; */
   border-radius: 50%;
   width: 40px;
   height: 40px;
